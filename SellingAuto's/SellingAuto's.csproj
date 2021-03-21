@@ -6,4 +6,8 @@
     <RootNamespace>SellingAuto_s</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
 </Project>
