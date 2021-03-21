@@ -28,13 +28,31 @@ namespace SellingAuto_s
             Cities city1 = Manager.CreateCity1(store1_1, store1_2);
             Cities city2 = Manager.CreateCity2(store2_1, store2_2);
 
-            Console.WriteLine(city1.secondStoreName.Cars.maxSpeed);
+
+            Console.WriteLine("TEST PURPOSE BLOCK BELOW");
+
+            Console.WriteLine("\n" + city1.secondStoreName.Cars.maxSpeed + "\n");
+            Console.WriteLine("\n" + city1.cityName + store1_1.storeName + "\n");
+            Console.WriteLine("\n" + city1.secondStoreName.Cars.color + city1.secondStoreName.Cars.make + "\n");
+            Console.WriteLine("\n" + store2_2.Cars.color + store2_2.Cars.make + store2_2.Cars.number + store2_2.Cars.maxSpeed + "\n");
 
             car1_1.DisplayCar();
             car1_2.DisplayCar();
             car2_1.DisplayCar();
             car2_2.DisplayCar();
+
+            store1_1.DisplayStore();
+            store1_2.DisplayStore();
+            store2_1.DisplayStore();
+            store2_2.DisplayStore();
+
+            //Tune up to show them the stores in those cities
+            city1.DisplayCity();
+            city1.DisplayCity();
         }
+
+
+
     }
 }
 

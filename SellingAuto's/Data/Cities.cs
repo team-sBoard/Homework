@@ -13,9 +13,9 @@
             this.secondStoreName = secondStoreName;
         }
 
-        public void DisplayFirstCity()
+        public void DisplayCity()
         {
-            System.Console.WriteLine(cityName);
+            System.Console.WriteLine($"{cityName} {secondStoreName} {firstStoreName}");
         }
     }
 }

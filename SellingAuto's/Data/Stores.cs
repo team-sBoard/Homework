@@ -10,5 +10,9 @@
             this.storeName = storeName;
             this.Cars = cars;
         }
+        public void DisplayStore()
+        {
+            System.Console.WriteLine($"{storeName}"); //To be added cars to display
+        }
     }
 }
