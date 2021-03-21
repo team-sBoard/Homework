@@ -13,57 +13,27 @@ namespace SellingAuto_s
 
         static void Main(string[] args)
         {
-
             Console.WriteLine("Welcome to Lada racing club");
 
-            // Making the cities
-            Console.WriteLine("Please give the name to the first city");
-            Cities city1 = new Cities();
+            Cars car1_1 = Manager.CreateCar1_1();
+            Cars car1_2 = Manager.CreateCar1_2();
+            Cars car2_1 = Manager.CreateCar2_1();
+            Cars car2_2 = Manager.CreateCar2_2();
 
-            city1.GetCityName();
-            Console.WriteLine(city1.cityName);
-            Console.ReadLine();
+            Stores store1_1 = Manager.CreateStore1_1(car1_1);
+            Stores store1_2 = Manager.CreateStore1_2(car1_2);
+            Stores store2_1 = Manager.CreateStore2_1(car2_1);
+            Stores store2_2 = Manager.CreateStore2_2(car2_1);
 
-            Console.WriteLine("Now we have city called" + city1);
+            Cities city1 = Manager.CreateCity1(store1_1, store1_2);
+            Cities city2 = Manager.CreateCity2(store2_1, store2_2);
 
-            // making the stores
-            Console.WriteLine("Please give the name to the first store of the first city" + city1.cityName);
-            Stores store1_1 = new Stores();
-            //store1_1.Console.ReadLine();
-            store1_1.Cities.cityName = city1.cityName;
+            Console.WriteLine(city1.secondStoreName.Cars.maxSpeed);
 
-            //  Console.WriteLine(city1.cityName + " has stores called " + store1_1._storeName);
-            // Making the cars
-            //Console.WriteLine("Now we going to create the cars. Every car has the color, make, top speed and a unique#");
-            // Console.WriteLine("Creating the first car in a " + store1_1._storeName + " in a " + city1.cityName);
-            Cars car1 = new Cars();
-            car1.Stores.storeName = Console.ReadLine();
-            car1.Cities = city1;
-            car1.GetCar(car1.maxSpeed, car1.number, car1.color, car1.make);
-
-            Console.WriteLine("Enter the car color");
-            car1.color = "Red";
-
-            Console.WriteLine("Enter the car make");
-            car1.make = "Volkswagen";
-
-            Console.WriteLine("Enter the car top Speed");
-            car1.maxSpeed = 110;
-
-            Console.WriteLine("Enter the car unique 4 digit number");
-            car1.number = 1111;
-
-            //Console.WriteLine("Hey, we just got a new car here. It's in a " + city1.cityName + "'s " + store1_1._storeName + "'s shop");
-            Console.WriteLine($"The car is {car1.color} {car1.make} with the top speed of {car1.maxSpeed} kPh, and unique number is {car1.number}");
-            Console.WriteLine(car1.Cities.cityName + car1.Stores.storeName);
-
-            Console.ReadKey();
-
-            store1_1.Cities.cityName = Console.ReadLine();
-            Console.WriteLine("Press any key to see the Aplpha1 store city name");
-            Console.ReadKey();
-            Console.WriteLine("\n" + store1_1.Cities.cityName);
-            Console.ReadKey();
+            car1_1.DisplayCar();
+            car1_2.DisplayCar();
+            car2_1.DisplayCar();
+            car2_2.DisplayCar();
         }
     }
 }

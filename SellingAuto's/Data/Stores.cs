@@ -3,12 +3,12 @@
     public class Stores
     {
         public string storeName;
-
-        public Cities Cities;
         public Cars Cars;
 
-        //public void GetStoreName(string storeName)
-        //{            
-        //}
+        public Stores(string storeName, Cars cars)
+        {
+            this.storeName = storeName;
+            this.Cars = cars;
+        }
     }
 }
