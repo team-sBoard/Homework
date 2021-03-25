@@ -3,19 +3,22 @@
     public class Cities
     {
         public string cityName;
-        public Stores firstStoreName;
-        public Stores secondStoreName;
+        public Stores storeName1;
+        public Stores storeName2;
 
-        public Cities(string cityName, Stores firtStoreName, Stores secondStoreName)
+        public Cities(string cityName, Stores storeName1, Stores storeName2)
         {
             this.cityName = cityName;
-            this.firstStoreName = firtStoreName;
-            this.secondStoreName = secondStoreName;
+            this.storeName1 = storeName1;
+            this.storeName2 = storeName2;
         }
 
         public void DisplayCity()
         {
-            System.Console.WriteLine($"{cityName} {secondStoreName} {firstStoreName}");
+            System.Console.WriteLine(cityName);
+            storeName1.DisplayStore();
+            storeName2.DisplayStore();
         }
+
     }
 }

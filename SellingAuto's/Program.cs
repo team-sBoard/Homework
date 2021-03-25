@@ -15,6 +15,7 @@ namespace SellingAuto_s
         {
             Console.WriteLine("Welcome to Lada racing club");
 
+
             Cars car1_1 = Manager.CreateCar1_1();
             Cars car1_2 = Manager.CreateCar1_2();
             Cars car2_1 = Manager.CreateCar2_1();
@@ -23,7 +24,7 @@ namespace SellingAuto_s
             Stores store1_1 = Manager.CreateStore1_1(car1_1);
             Stores store1_2 = Manager.CreateStore1_2(car1_2);
             Stores store2_1 = Manager.CreateStore2_1(car2_1);
-            Stores store2_2 = Manager.CreateStore2_2(car2_1);
+            Stores store2_2 = Manager.CreateStore2_2(car2_2);
 
             Cities city1 = Manager.CreateCity1(store1_1, store1_2);
             Cities city2 = Manager.CreateCity2(store2_1, store2_2);
@@ -31,24 +32,33 @@ namespace SellingAuto_s
 
             Console.WriteLine("TEST PURPOSE BLOCK BELOW");
 
-            Console.WriteLine("\n" + city1.secondStoreName.Cars.maxSpeed + "\n");
+            Console.WriteLine("\n" + city1.storeName1.Cars.maxSpeed + "\n");
             Console.WriteLine("\n" + city1.cityName + store1_1.storeName + "\n");
-            Console.WriteLine("\n" + city1.secondStoreName.Cars.color + city1.secondStoreName.Cars.make + "\n");
+            Console.WriteLine("\n" + city1.storeName2.Cars.color + city1.storeName2.Cars.make + "\n");
             Console.WriteLine("\n" + store2_2.Cars.color + store2_2.Cars.make + store2_2.Cars.number + store2_2.Cars.maxSpeed + "\n");
+
+            Console.WriteLine(city1.storeName2.storeName);
+            Console.WriteLine(city1.storeName2.storeName);
+
+            Console.WriteLine("Cars are below");
 
             car1_1.DisplayCar();
             car1_2.DisplayCar();
             car2_1.DisplayCar();
             car2_2.DisplayCar();
 
+            Console.WriteLine("Stores are below");
+
             store1_1.DisplayStore();
             store1_2.DisplayStore();
             store2_1.DisplayStore();
             store2_2.DisplayStore();
 
-            //Tune up to show them the stores in those cities
+
+            Console.WriteLine("Cities below are below");
+
             city1.DisplayCity();
-            city1.DisplayCity();
+            city2.DisplayCity();
         }
 
 

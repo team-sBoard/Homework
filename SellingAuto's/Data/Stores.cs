@@ -13,6 +13,7 @@
         public void DisplayStore()
         {
             System.Console.WriteLine($"{storeName}"); //To be added cars to display
+            Cars.DisplayCar();
         }
     }
 }

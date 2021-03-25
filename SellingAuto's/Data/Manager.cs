@@ -3,21 +3,20 @@ namespace SellingAuto_s.Data
 {
     public class Manager
     {
-        public static Cities CreateCity1(Stores stores, Stores stores_1)
+        public static Cities CreateCity1(Stores storeName1, Stores storeName2)
         {
             Console.WriteLine("Please name the first city");
-            string cityName1 = " Alphaville "; //ReadString();
-            Cities city1 = new Cities(cityName1, stores, stores_1);
+            string cityName = " Alphaville "; //ReadString();
+            Cities city1 = new Cities(cityName, storeName1, storeName2);
             return city1;
         }
-        public static Cities CreateCity2(Stores stores, Stores stores_2)
+        public static Cities CreateCity2(Stores storeName1, Stores storeName2)
         {
             Console.WriteLine("Please name the second city");
-            string cityName2 = " Bravoburg "; //ReadString();
-            Cities city2 = new Cities(cityName2, stores, stores_2);
+            string cityName = " Bravoburg "; //ReadString();
+            Cities city2 = new Cities(cityName, storeName1, storeName2);
             return city2;
         }
-
 
         public static Stores CreateStore1_1(Cars cars)
         {
