@@ -12,8 +12,7 @@
         }
         public void DisplayStore()
         {
-            System.Console.WriteLine($"{storeName}"); //To be added cars to display
-            Cars.DisplayCar();
+            System.Console.WriteLine($"The store called {storeName}.\n");
         }
     }
 }

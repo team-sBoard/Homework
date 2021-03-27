@@ -16,7 +16,7 @@
         }
         public void DisplayCar()
         {
-            System.Console.WriteLine($"{maxSpeed } {number } {color } {make }");
+            System.Console.WriteLine($"\n The car's # is {number}. It's a {color}{make} with top speed {maxSpeed} Mph \n");
         }
     }
 }

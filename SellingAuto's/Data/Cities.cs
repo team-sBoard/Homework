@@ -6,6 +6,11 @@
         public Stores storeName1;
         public Stores storeName2;
 
+        public Cities(string cityName)
+        {
+            this.cityName = cityName;
+        }
+
         public Cities(string cityName, Stores storeName1, Stores storeName2)
         {
             this.cityName = cityName;
@@ -15,9 +20,7 @@
 
         public void DisplayCity()
         {
-            System.Console.WriteLine(cityName);
-            storeName1.DisplayStore();
-            storeName2.DisplayStore();
+            System.Console.WriteLine("\n The city is " + cityName + "\n");
         }
 
     }
