@@ -13,24 +13,53 @@ namespace SellingAuto_s
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Lada racing club");
-            Console.WriteLine("Type 'exit' to exit the program in any time");
-            Console.WriteLine("Please enter the car's #");
-
+            Console.WriteLine("Welcome to the Lada racing club");
+            Console.WriteLine("\nType 'exit' to exit the program in any time");
 
             string command;
             Cities city1, city2;
             Stores store1_1, store1_2, store2_1, store2_2;
             Cars car1_1, car1_2, car2_1, car2_2;
 
+            city1 = Manager.CreateCity1();
+            city2 = Manager.CreateCity2();
+            store1_1 = Manager.CreateStore1_1();
+            store1_2 = Manager.CreateStore1_2();
+            store2_1 = Manager.CreateStore2_1();
+            store2_2 = Manager.CreateStore2_2();
+
             Manager.CreateAllCars(out car1_1, out car1_2, out car2_1, out car2_2);
-            Manager.CreateAllStores(car1_1, car1_2, car2_1, car2_2, out store1_1, out store1_2, out store2_1, out store2_2);
-            Manager.CreateAllCities(store1_1, store1_2, store2_1, store2_2, out city1, out city2);
+            Manager.CreateStore1_1(store1_1, car1_1);
+            Manager.CreateStore1_2(store1_2, car1_2);
+            Manager.CreateStore2_1(store2_1, car2_1);
+            Manager.CreateStore2_2(store2_2, car2_2);
+
+            Manager.CreateCity1(city1, store1_1, store1_2);
+            Manager.CreateCity2(city2, store2_1, store2_2);
+
+            car1_1 = Manager.CreateCar1_1();
+            car1_2 = Manager.CreateCar1_2();
+            car2_1 = Manager.CreateCar2_1();
+            car2_2 = Manager.CreateCar2_2();
+
+            //Manager.CreateAllStores(out store1_1, out store1_2, out store2_1, out store2_2);
+            //Manager.CreateAllCities(out city1, out city2);
+
+            //Console.WriteLine("TEST PURPOSE BLOCK BELOW");
+            //Console.WriteLine("TEST PURPOSE BLOCK BELOW");
+            //Console.WriteLine("\n" + city1.storeName1.Cars.maxSpeed + "\n");
+            //Console.WriteLine("\n" + city1.cityName + store1_1.storeName + "\n");
+            //Console.WriteLine("\n" + city1.storeName2.Cars.color + city1.storeName2.Cars.make + "\n");
+            //Console.WriteLine("\n" + store2_2.Cars.color + store2_2.Cars.make + store2_2.Cars.number + store2_2.Cars.maxSpeed + "\n");
+            //Console.WriteLine(city1.storeName2.storeName);
+            //Console.WriteLine(city1.storeName2.storeName);
+            //Console.WriteLine("TEST PURPOSE BLOCK ABOVE");
+            //Console.WriteLine("TEST PURPOSE BLOCK ABOVE");
+
 
 
             Console.WriteLine("Congratulations, the store has been created, now enter the command");
             Console.WriteLine("Quick hint: you may find a car by entering the number!");
-
             do
             {
                 Console.WriteLine($"There's following options to choose:\n {car1_1.number} \n {car1_2.number} \n {car2_1.number} \n {car2_2.number}");
@@ -47,10 +76,10 @@ namespace SellingAuto_s
                 }
                 if (command == "all")
                 {
-                    city1.storeName1.Cars.DisplayCar();
-                    city1.storeName2.Cars.DisplayCar();
-                    city2.storeName1.Cars.DisplayCar();
-                    city2.storeName2.Cars.DisplayCar();
+                    car1_1.DisplayCar();
+                    car1_2.DisplayCar();
+                    car2_1.DisplayCar();
+                    car2_2.DisplayCar();
                 }
 
                 if (!int.TryParse(command, out number))
@@ -98,21 +127,8 @@ namespace SellingAuto_s
             while (true);
             Console.WriteLine("Ciao!");
 
-            //Dpdelat Do while chtoby exit rabotal
-
-            //Console.WriteLine("TEST PURPOSE BLOCK BELOW");
-
-            //Console.WriteLine("\n" + city1.storeName1.Cars.maxSpeed + "\n");
-            //Console.WriteLine("\n" + city1.cityName + store1_1.storeName + "\n");
-            //Console.WriteLine("\n" + city1.storeName2.Cars.color + city1.storeName2.Cars.make + "\n");
-            //Console.WriteLine("\n" + store2_2.Cars.color + store2_2.Cars.make + store2_2.Cars.number + store2_2.Cars.maxSpeed + "\n");
-
-            //Console.WriteLine(city1.storeName2.storeName);
-            //Console.WriteLine(city1.storeName2.storeName);
 
         }
-
-
     }
 }
 

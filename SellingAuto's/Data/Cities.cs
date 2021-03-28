@@ -11,9 +11,9 @@
             this.cityName = cityName;
         }
 
-        public Cities(string cityName, Stores storeName1, Stores storeName2)
+        public Cities(Cities cityName, Stores storeName1, Stores storeName2)
         {
-            this.cityName = cityName;
+            this.cityName = cityName.cityName;
             this.storeName1 = storeName1;
             this.storeName2 = storeName2;
         }

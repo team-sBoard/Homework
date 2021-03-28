@@ -5,6 +5,11 @@
         public string storeName;
         public Cars Cars;
 
+        public Stores(string storeName)
+        {
+            this.storeName = storeName;
+        }
+
         public Stores(string storeName, Cars cars)
         {
             this.storeName = storeName;
